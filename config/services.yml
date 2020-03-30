@@ -1,0 +1,13 @@
+services:
+    dmzx.htaccesseditor.admin.controller:
+        class: dmzx\htaccesseditor\controller\admin_controller
+        arguments:
+            - '@config'
+            - '@template'
+            - '@log'
+            - '@user'
+            - '@request'
+            - '@language'
+            - '@ext.manager'
+            - '@service_container'
+            - '%core.root_path%'

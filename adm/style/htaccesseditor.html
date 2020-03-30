@@ -1,0 +1,24 @@
+{% INCLUDE 'overall_header.html' %}
+
+<a name="maincontent"></a>
+
+<h1>{{ lang('ACP_HTACCESSEDITOR_TITLE') }}</h1>
+<p>{{ lang('ACP_HTACCESSEDITOR_TITLE_EXPLAIN') }}</p>
+
+<form id="acp_htaccesseditor" method="POST" action="{{ U_ACTION }}" >
+	<fieldset>
+		<legend>{{ lang('ACP_HTACCESSEDITOR_TITLE') }}</legend>
+		<dl>
+			<dt><label for="htaccesseditor">{{ lang('ACP_HTACCESSEDITOR') ~ lang('COLON') }}</label><br><span>{{ lang('ACP_HTACCESSEDITOR_EXPLAIN') }}</span></dt>
+			<dd><textarea name="htaccesseditor" id="htaccesseditor" style="line-height:125%;width:100%;" cols="80" rows="10"{{ marttiphpbb_codemirror.data_attr ?? '' }}>{{ HTACCESSEDITOR }}</textarea></dd>
+		</dl>
+	</fieldset>
+	<fieldset class="submit-buttons">
+		<legend>{{ lang('SUBMIT') }}</legend>
+		<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />
+		<input class="button2" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}">
+		{{ S_FORM_TOKEN }}
+	</fieldset>
+</form>
+
+{% INCLUDE 'overall_footer.html' %}
